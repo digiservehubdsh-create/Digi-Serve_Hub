@@ -1,0 +1,97 @@
+:root {
+    --olive: #556B2F;
+    --dark: #1f1f1f;
+    --light: #f4f4f1;
+    --gold: #c2a83e;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    color: var(--olive);
+    font-size: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--olive);
+}
+
+.hero {
+    background: var(--olive);
+    color: white;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 80px 8%;
+}
+
+.section h2 {
+    color: var(--olive);
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.button {
+    display: inline-block;
+    background: var(--olive);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background: var(--dark);
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 30px 8%;
+    text-align: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
