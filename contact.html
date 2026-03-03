@@ -6,78 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <h1 class="logo">Digi-Serve Hub</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <h1 class="logo">Digi-Serve Hub</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="contact-card">
+<section class="section-dark">
+    <div class="contact-card">
+        <h2>Let’s Build Something Meaningful</h2>
+        <p>Share your project details and we’ll connect with you directly on WhatsApp.</p>
 
-            <h2>Let’s Build Something Powerful</h2>
-            <p class="contact-subtext">
-                Tell us about your project and we’ll connect with you directly on WhatsApp.
-                Clear communication. Fast execution. Real results.
-            </p>
+        <form onsubmit="sendToWhatsApp(); return false;" class="contact-form">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <input type="email" id="email" placeholder="Your Email Address" required>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+            <textarea id="message" placeholder="Describe your project..." required></textarea>
+            <button type="submit" class="submit-btn">Send via WhatsApp</button>
+        </form>
+    </div>
+</section>
 
-            <form onsubmit="sendToWhatsApp(); return false;" class="contact-form">
-                
-                <input type="text" id="name" placeholder="Your Full Name" required>
+<footer>
+    <p>© 2026 Digi-Serve Hub. All Rights Reserved.</p>
+</footer>
 
-                <input type="email" id="email" placeholder="Your Email Address" required>
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
 
-                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+    var text = "Hello Digi-Serve Hub,%0A%0A"
+        + "Name: " + name + "%0A"
+        + "Email: " + email + "%0A"
+        + "Phone: " + phone + "%0A"
+        + "Project Details: " + message;
 
-                <textarea id="message" placeholder="Describe your project or requirement..." required></textarea>
+    var phoneNumber = "919876543210";
 
-                <button type="submit" class="submit-btn">
-                    Send Message via WhatsApp
-                </button>
-
-            </form>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Digi-Serve Hub. All Rights Reserved.</p>
-    </footer>
-
-    <!-- WhatsApp Script -->
-    <script>
-        function sendToWhatsApp() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            var message = document.getElementById("message").value;
-
-            var whatsappMessage = "Hello Digi-Serve Hub,%0A%0A"
-                + "Name: " + name + "%0A"
-                + "Email: " + email + "%0A"
-                + "Phone: " + phone + "%0A"
-                + "Project Details: " + message;
-
-            var phoneNumber = "919876543210"; // Replace with your number
-
-            var url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
-
-            window.open(url, "_blank");
-        }
-    </script>
+    window.open("https://wa.me/" + phoneNumber + "?text=" + text, "_blank");
+}
+</script>
 
 </body>
-</html>
+    </html>
