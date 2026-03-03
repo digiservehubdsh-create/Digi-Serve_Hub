@@ -1,47 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Contact | Digi-Serve Hub</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Digi-Serve Hub</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1 class="logo">Digi-Serve Hub</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
-    <h2>Start a Structured Conversation</h2>
-</section>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
 
-<section class="section">
+            <h2>Let’s Build Something Impactful</h2>
+            <p class="contact-subtext">
+                Have a project in mind? Share your details below and we’ll connect with you directly on WhatsApp to discuss the next steps.
+            </p>
 
-<form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="5" placeholder="Your Message"></textarea>
-    <a href="https://wa.me/917896925877" class="whatsapp-btn" target="_blank">
-    Chat With Us on WhatsApp
-    </a>
-    <section class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: digiservehub.dsh@gmail.com</p>
+            <form onsubmit="sendToWhatsApp(); return false;" class="contact-form">
+                
+                <input type="text" id="name" placeholder="Your Full Name" required>
+
+                <input type="email" id="email" placeholder="Your Email Address" required>
+
+                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+                <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+
+                <button type="submit" class="submit-btn">
+                    Send Message via WhatsApp
+                </button>
+
+            </form>
+
+        </div>
     </section>
-    <button class="button">Submit</button>
-</form>
 
-</section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Digi-Serve Hub. All Rights Reserved.</p>
+    </footer>
 
-<footer>
-    © 2026 Digi-Serve Hub
-</footer>
+    <!-- WhatsApp Script -->
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+
+            var whatsappMessage = "Hello Digi-Serve Hub,%0A%0A"
+                + "Name: " + name + "%0A"
+                + "Email: " + email + "%0A"
+                + "Phone: " + phone + "%0A"
+                + "Project Details: " + message;
+
+            var phoneNumber = "917896925877"; // 🔁 Replace with your number (no +)
+
+            var url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+            window.open(url, "_blank");
+        }
+    </script>
 
 </body>
-</html>
+                    </html>
